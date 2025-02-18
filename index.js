@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     res.send("¡Hola desde GitHub Actions y Vercel!");
 });
 
-// Iniciar el servidor
+// Iniciar el servidor.
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
