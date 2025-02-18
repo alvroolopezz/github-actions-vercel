@@ -21,5 +21,8 @@ jobs:
     - name: Install nyc globally
       run: npm install -g nyc
 
+    - name: Set executable permissions for mocha
+      run: chmod +x ./node_modules/.bin/mocha
+
     - name: Run tests
       run: npm test
