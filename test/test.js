@@ -9,7 +9,9 @@ const animals = {
     "bear": "growl",
     "frog": "croak",
     "lion": "roar",
-    "bird": "tweet"
+    "bird": "tweet",
+    //he añadido la vaca
+    "cow": "moo"
 };
 
 function getAnimal() {
