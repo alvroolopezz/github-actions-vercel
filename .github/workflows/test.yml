@@ -1,22 +1,25 @@
 name: Granja Animales Node.js CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+
+on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4 # Versión correcta
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v3 # Versión correcta
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Install nyc globally
+      run: npm install -g nyc
+
+    - name: Run tests
+      run: npm test
